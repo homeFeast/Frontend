@@ -1,45 +1,45 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
-import 'boxicons'
+import 'boxicons';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './App.css'
 
-export function Seller() {
+export function OrderDetail() {
   const [searchQuery, setSearchQuery] = useState('');
-  
+
   // Dummy data representing different sections of the website
   const websiteContent = [
     {
       title: 'Home',
-      content: 'Welcome to our website! This is the home page content.'
+      content: 'Welcome to our website! This is the home page content.',
     },
     {
       title: 'About',
-      content: 'Learn more about us and our mission.'
+      content: 'Learn more about us and our mission.',
     },
     {
       title: 'Portfolio',
-      content: 'Explore our portfolio showcasing our work.'
+      content: 'Explore our portfolio showcasing our work.',
     },
     {
       title: 'Contact',
-      content: 'Get in touch with us for inquiries or feedback.'
+      content: 'Get in touch with us for inquiries or feedback.',
     },
     {
       title: 'Feedback',
-      content: 'Leave us your feedback and suggestions.'
-    }
+      content: 'Leave us your feedback and suggestions.',
+    },
   ];
 
   // Filter content based on search query
-  const filteredContent = websiteContent.filter(item =>
-    item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.content.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredContent = websiteContent.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.content.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -55,11 +55,13 @@ export function Seller() {
               className="me-2"
               aria-label="Search"
               value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" className='button-31'>Search</Button>
           </Form>
-          <a href=''><box-icon name='user' type='solid' color='#111'></box-icon></a>
+          <a href="">
+            <box-icon name="user" type="solid" color="#111"></box-icon>
+          </a>
         </Container>
       </Navbar>
 
@@ -75,21 +77,6 @@ export function Seller() {
               </ul>
             </nav>
           </header>
-        </div>
-      </div>
-
-      <div className="right">
-        <br /><br />
-        <div className="d-flex justify-content-around">
-          {filteredContent.map(item => (
-            <Card key={item.title} style={{ width: '18rem' }} className='card1'>
-              <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Text>{item.content}</Card.Text>
-                <Button variant="primary" className='button-31'>Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          ))}
         </div>
       </div>
     </div>
